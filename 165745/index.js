@@ -1,3 +1,4 @@
+alert("hello world");
 <menu type="context" id="mymenu">
     <menuitem label="Refresh Post" onclick="window.location.reload();" icon="/images/refresh-icon.png"></menuitem>
     <menuitem label="Skip to Comments" onclick="window.location='#comments';" icon="/images/comment_icon.gif"></menuitem>
