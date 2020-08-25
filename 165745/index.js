@@ -1,1 +1,1 @@
-alert('hello world');
+document.body.style.background = "#fcba03"
