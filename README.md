@@ -1,11 +1,19 @@
-# What is this
-This repository is to store code for the Searche Web browser
-Download web browser here
+# Extension
 
-https://3cfnnrt6tz.wixsite.com/searche
+ This repository is used to store extensions code for the Searche web browser
+ 
+ ##### Download here
+ https://3cfnnrt6tz.wixsite.com/searche
 
 # Make an extension
-Create a folder with a random 6 digit number with no pattern. Add two files, index.html and index.js (You can add more later) 
 
-The index.html is the view for the extension
-The index.js is the javascript evaluated by the webview
+  - Create a folder with a random 6 digit number
+  - Add two files into the folder ( index.html and index.js )
+
+#### index.html
+The index.html is the extension view
+
+#### index.js
+The index.js is the javascript evaluated by the webView.
+> The index.js is the only script evaluated by the webview, so if you want to make a another script, you need to access it from a url
+
