@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link id="main-sheet" rel="stylesheet" href="https://app.saul.angry.ventures/themes/yeti/stylesheet.css">
+    <title>Searche Extension</title>
+</head>
+<style>
+    body {
+        font-family: 'SF-Pro-Display', sans-serif;
+    }
+    h1 {
+        font-weight: 380;
+        font-family: 'SF-Pro-Display', sans-serif;
+    }
+
+    .highlight {
+        background-color: #fff34d;
+        -moz-border-radius: 5px;
+        /* FF1+ */
+        -webkit-border-radius: 5px;
+        /* Saf3-4 */
+        border-radius: 5px;
+        /* Opera 10.5, IE 9, Saf5, Chrome */
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+        /* FF3.5+ */
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+        /* Saf3.0+, Chrome */
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+        /* Opera 10.5+, IE 9.0 */
+    }
+
+    .highlight {
+        padding: 1px 4px;
+        margin: 0 -4px;
+    }
+</style>
+
+<body class="">
+    <input id="text-search" type="text" class="form-control" placeholder="Search Extensions">
+
+    <section class="row" id="paragraph" style="margin: 20px;">
+        <div class="col-sm-3">
+            <div>
+                <a href="">
+                <img width="175" height="100"
+                    src="img/Calculator.png">
+                </a>
+                <h3>Calculator<br><small>165745</small></h3>
+
+            </div>
+        </div>
+        <div class="col-sm-3" id="">
+            <div>
+                <a href="">
+                <img width="175" height="100"
+                    src="img/Paper.io.png">
+                </a>
+                <h3>Paper.io<br><small>157493</small></h3>
+            </div>
+        </div>
+        <div class="col-sm-3" id="">
+            <div>
+                <a href="">
+                <img width="175" height="100"
+                    src="img/Paper.io.png">
+                </a>
+                <h3>Paper.io<br><small>157493</small></h3>
+            </div>
+        </div>
+        <div class="col-sm-3" id="">
+            <div>
+                <a href="">
+                <img width="175" height="100"
+                    src="img/Paper.io.png">
+                </a>
+                <h3>Paper.io<br><small>157493</small></h3>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    jQuery.fn.highlight = function (pat) {
+
+        function innerHighlight(node, pat) {
+
+            var skip = 0;
+
+            if (node.nodeType == 3) {
+
+                var pos = node.data.toUpperCase().indexOf(pat);
+
+                if (pos >= 0) {
+
+                    var spannode = document.createElement('span');
+                    spannode.className = 'highlight';
+                    var middlebit = node.splitText(pos);
+                    var endbit = middlebit.splitText(pat.length);
+                    var middleclone = middlebit.cloneNode(true);
+
+                    spannode.appendChild(middleclone);
+                    middlebit.parentNode.replaceChild(spannode, middlebit);
+                    skip = 1;
+
+                }
+
+            } else if (node.nodeType == 1 && node.childNodes && !/(script|style) /i.test(node.tagName)) {
+
+                for (var i = 0; i < node.childNodes.length; ++i) {
+
+                    i += innerHighlight(node.childNodes[i], pat);
+
+                }
+
+            }
+
+            return skip;
+
+        }
+
+        return this.each(function () {
+
+            innerHighlight(this, pat.toUpperCase());
+
+        });
+
+    };
+
+    jQuery.fn.removeHighlight = function () {
+
+        function newNormalize(node) {
+
+            for (var i = 0, children = node.childNodes, nodeCount = children.length; i < nodeCount; i++) {
+
+                var child = children[i];
+
+                if (child.nodeType == 1) {
+
+                    newNormalize(child);
+                    continue;
+
+                }
+
+                if (child.nodeType != 3) { continue; }
+
+                var next = child.nextSibling;
+
+                if (next == null || next.nodeType != 3) { continue; }
+
+                var combined_text = child.nodeValue + next.nodeValue;
+                new_node = node.ownerDocument.createTextNode(combined_text);
+                node.insertBefore(new_node, child);
+                node.removeChild(child);
+                node.removeChild(next);
+                i--;
+                nodeCount--;
+
+            }
+
+        }
+
+        return this.find("span.highlight").each(function () {
+
+            var thisParent = this.parentNode;
+            thisParent.replaceChild(this.firstChild, this);
+            newNormalize(thisParent);
+
+        }).end();
+
+    };
+    $(function () {
+
+        $('#text-search').bind('keyup change', function (ev) {
+
+            // pull in the new value
+            var searchTerm = $(this).val();
+
+            // remove any old highlighted terms
+            $('body').removeHighlight();
+
+            // disable highlighting if empty
+            if (searchTerm) {
+
+                // highlight the new term
+                $('body').highlight(searchTerm);
+
+            }
+
+        });
+
+    });
+
+</script>
+</html>
