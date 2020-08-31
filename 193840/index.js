@@ -1,33 +1,69 @@
 var styleTag = document.createElement("style");
 styleTag.textContent = `
-html { margin: 50px; }
-
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif }
-
-h1 { font-weight: 800; font-size: 3.5em; }
-h2 { font-weight: 800; font-size: 2.25em; }
-p { font-weight: 400; font-size: 1.75em; }
-
-
-/*
-    Media Query para Dark Mode.
-    Los valores aceptados son:
-        - dark
-        - light
-        - no-preference
-*/
-@media (prefers-color-scheme: dark)
-{
-    body { background-color: #171717; color: #ffffff; }
-    a { color: #d62f2f }
-    a :visited { color: #d62f2f }
+html, body {
+  height: 100%;
 }
 
-@media (prefers-color-scheme: light)
-{
-    body { background-color: #ffffff; color: #121212; }
-    a { color: #ac2525 }
-    a :visited { color: #ac2525 }
+.d-table,
+.btn-mktg,
+.topic-tag,
+.btn-primary,
+.lh-condensed,
+.state, .State,
+.btn-primary-mktg,
+.flex-self-stretch,
+.jumbotron-codelines,
+.subnav-item.selected,
+.promo-banner-bg:after,
+.promo-banner-bg:before,
+.MarketplaceAnnouncement,
+.subnav-item[aria-selected=true],
+.css-truncate.css-truncate-target,
+.css-truncate .css-truncate-target,
+.subnav-item[aria-current]:not([aria-current=false]) {
+  filter: invert(100%) !important;
+  -webkit-filter: invert(100%) !important;
+}
+
+.h1-mktg {
+  color: dimgrey !important;
+}
+
+.HeaderMenu-link {
+  color: #565656 !important;
+}
+
+table.files td.icon svg {
+  fill: #dedede !important;
+}
+
+main .btn-link {
+  color: #d6d6d6 !important;
+}
+
+footer .text-gray-dark {
+  color: #b5b5b5 !important;
+}
+
+footer,
+main .bg-gray-dark,
+main .bg-gray-light {
+  background-color: #e0e0e0 !important;
+}
+
+.footer,
+.gh-header,
+.commit-ref,
+.Header-old,
+.CircleBadge,
+.application-main,
+.pulse-authors-graph,
+.tabnav-pr .tabnav-tab {
+  background-color: #e0e0e0 !important;
+}
+
+.tabnav-pr .tabnav-tab.selected {
+  border-color: #b5b5b5 !important;
 }
 `
 document.documentElement.appendChild(styleTag);
