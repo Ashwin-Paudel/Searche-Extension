@@ -1,9 +1,9 @@
 # Extension
 
- This repository is used to store extensions code for the Searche web browser
+ This repository is used to store extensions code for the Unique web browser
  
  ##### Download here
- https://3cfnnrt6tz.wixsite.com/searche
+ https://3cfnnrt6tz.wixsite.com/searche (Deprecated)
 
 # Make an extension
 
