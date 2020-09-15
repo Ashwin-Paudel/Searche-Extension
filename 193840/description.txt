@@ -1,1 +1,3 @@
-Hello World
+Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.
+
+This eye-care extension enables night mode creating dark themes for websites on the fly. Dark Reader inverts bright colors making them high contrast and easy to read at night.
