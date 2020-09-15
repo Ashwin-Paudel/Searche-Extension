@@ -1,3 +1,3 @@
-Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.
+Dark mode is an extension to change every website you visit into a dark theme for night and daily browsing.
 
-This eye-care extension enables night mode creating dark themes for websites on the fly. Dark Reader inverts bright colors making them high contrast and easy to read at night.
+This extension just inverts the color, so if websites already have a dark theme, turn off the extension.
