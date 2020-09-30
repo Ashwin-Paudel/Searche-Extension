@@ -1,0 +1,1 @@
+Dark mode inverts the colors of the webpage. 
