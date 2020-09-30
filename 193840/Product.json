@@ -1,0 +1,12 @@
+{
+	"title": "Dark Mode",
+	"description": "Dark Mode is an extension that makes any website you visit dark. Dark mode inverts the colors, so if a website supports dark mode, turn off the extension.",
+	"extensionIconFromURL": "https://github.com/Ashwin-Paudel/Unique-Extension/raw/master/193840/icon.jpg",
+	"extensionVersion": "1.2",
+	"extensionLastUpdated": "Sep 28, 2020",
+	"author": "Ashwin Paudel",
+	"developerWebsite": "https://www.google.com/",
+	"developerPolicy": "No policy",
+	"scripts": ["https://github.com/Ashwin-Paudel/Unique-Extension/raw/master/193840/idex.js"]
+	"view": "https://github.com/Ashwin-Paudel/Unique-Extension/raw/master/193840/idex.html"
+}
